@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-rest-framework-roles',
-    version='0.3',
+    version='0.4',
     packages=['drf_roles'],
     include_package_data=True,
     license='BSD License',

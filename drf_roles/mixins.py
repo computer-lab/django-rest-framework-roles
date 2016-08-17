@@ -26,7 +26,7 @@ class RoleViewSetMixin(object):
         try:
             return getattr(self, role_fn)(*args, **kwargs)
         except AttributeError:
-            return getattr(super(NectarRoleViewSetMixin, self), fn)(*args, **kwargs)
+            return getattr(super(RoleViewSetMixin, self), fn)(*args, **kwargs)
 
     def _get_role(self, user):
         """Retrieves the given user's role"""
@@ -42,7 +42,7 @@ class RoleViewSetMixin(object):
             return user_role.pop()
 
 def register_fn(fn):
-    """Dynamically adds fn to NectarRoleViewSetMixin"""
+    """Dynamically adds fn to RoleViewSetMixin"""
     def inner(self, *args, **kwargs):
         return self._call_role_fn(fn, *args, **kwargs)
     setattr(RoleViewSetMixin, fn, inner)
