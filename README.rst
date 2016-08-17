@@ -56,7 +56,7 @@ Add the mixin to any ViewSet:
 
 .. code:: python
 
-    from drf_roles import RoleViewSetMixin
+    from drf_roles.mixins import RoleViewSetMixin
 
     class MyViewSet(RoleViewSetMixin, ModelViewSet):
         # ...
