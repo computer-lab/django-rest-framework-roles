@@ -114,5 +114,13 @@ Roadmap
   example, it may be more pleasing to use nested classes instead of renaming the
   methods.
 
+Further Reading
+---------------
+
+- `Role-Based Access Control with Django Rest Framework`_
+- `Computer Lab`_
+
 .. _Role Based Access Control: https://en.wikipedia.org/wiki/Role-based_access_control
 .. _django-rest-framework: http://www.django-rest-framework.org/
+.. _Role-Based Access Control with Django Rest Framework: http://computerlab.io/2016/08/17/django-rest-framework-roles/
+.. _Computer Lab: http://computerlab.io
