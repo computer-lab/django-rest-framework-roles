@@ -69,7 +69,7 @@ Parameterizing
 
 For example, let’s say you have three groups named *Takers*, *Leavers* &
 *Gods*. Let’s also say you included ``"get_queryset"`` in the
-``ROLE_REGISTRY``.
+``VIEWSET_METHOD_REGISTRY``.
 
 When a *Taker* user hits an endpont on the ViewSet, the call to
 ``get_queryset`` will be rerouted to a call to
