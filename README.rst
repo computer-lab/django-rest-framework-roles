@@ -49,6 +49,9 @@ Configuration
 
         [group.name.lower() for group in Group.objects.all()]
 
+It's recommended to define ``ROLE_GROUPS`` in ``settings`` to avoid
+a database lookup on every request.
+
 Usage
 -----
 

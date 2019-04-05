@@ -2,7 +2,6 @@ from django.conf import settings
 from django.contrib.auth.models import Group
 
 # Default settings
-DEFAULT_GROUPS = [group.name.lower() for group in Group.objects.all()]
 DEFAULT_REGISTRY = (
     "get_queryset",
     "get_serializer_class",
@@ -10,6 +9,7 @@ DEFAULT_REGISTRY = (
     "perform_update",
     "perform_destroy",
 )
+
 
 class RoleError(Exception):
     """Base class for exceptions in this module."""
@@ -19,7 +19,12 @@ class RoleError(Exception):
 class RoleViewSetMixin(object):
     """A ViewSet mixin that parameterizes DRF methods over roles"""
     _viewset_method_registry = set(getattr(settings, "VIEWSET_METHOD_REGISTRY", DEFAULT_REGISTRY))
-    _role_groups = set(getattr(settings, "ROLE_GROUPS", DEFAULT_GROUPS))
+
+    def __init__(self, **_kwargs):
+        groups = getattr(settings, "ROLE_GROUPS", None)
+        if groups is None:
+            groups = [group.name.lower() for group in Group.objects.all()]
+        self._role_groups = set(groups)
 
     def _call_role_fn(self, fn, *args, **kwargs):
         """Attempts to call a role-scoped method"""
