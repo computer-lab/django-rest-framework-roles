@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-rest-framework-roles',
-    version='0.5',
+    version='0.6',
     packages=['drf_roles'],
     include_package_data=True,
     license='BSD License',
@@ -17,7 +17,7 @@ setup(
     long_description=README,
     url='http://computerlab.io/',
     author='Robert C Jensen',
-    author_email='rob@.computerlab.io',
+    author_email='rob@computerlab.io',
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
